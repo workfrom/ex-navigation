@@ -209,7 +209,12 @@ export const SlideHorizontalFixedNav: ExNavigationStyles = {
   sceneAnimations: customForHorizontal,
   navigationBarAnimations: {
     forContainer: (props, delta) => {
-      const { layout, position, scene, scenes } = props;
+      const {
+        layout,
+        position,
+        scene,
+        scenes,
+      } = props;
 
       const index = scene.index;
 
@@ -220,10 +225,7 @@ export const SlideHorizontalFixedNav: ExNavigationStyles = {
         offset = meVisible ? offset : -offset;
       } else {
         // if we're pushing, get the previous scenes' visibility. If we're popping, get the scene ahead
-        const prevVisible = barVisibleForSceneIndex(
-          scenes,
-          index + (delta > 0 ? -1 : 1)
-        );
+        const prevVisible = barVisibleForSceneIndex(scenes, index + (delta > 0 ? -1 : 1));
         if (!prevVisible && meVisible) {
           // when showing, if a push, move from right to left, otherwise if pop, move from left to right
           offset = delta > 0 ? offset : -offset;
