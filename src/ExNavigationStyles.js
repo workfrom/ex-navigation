@@ -253,9 +253,9 @@ export const SlideHorizontalFixedNav: ExNavigationStyles = {
     /**
      * Crossfade the left view
      */
-    forLeft: props => {
-      const { position, scene, scenes } = props;
-      const { index } = scene;
+    forLeft: (props) => {
+      const {position, scene, scenes} = props;
+      const {index} = scene;
       return {
         opacity: position.interpolate({
           inputRange: [index - 1, index, index + 1],
@@ -266,9 +266,9 @@ export const SlideHorizontalFixedNav: ExNavigationStyles = {
     /**
      * Crossfade the title
      */
-    forCenter: props => {
-      const { position, scene, scenes } = props;
-      const { index } = scene;
+    forCenter: (props) => {
+      const {position, scene, scenes} = props;
+      const {index} = scene;
       return {
         opacity: position.interpolate({
           inputRange: [index - 1, index, index + 1],
@@ -279,9 +279,9 @@ export const SlideHorizontalFixedNav: ExNavigationStyles = {
     /**
      * Crossfade the right view
      */
-    forRight: props => {
-      const { position, scene, scenes } = props;
-      const { index } = scene;
+    forRight: (props) => {
+      const {position, scene, scenes} = props;
+      const {index} = scene;
       return {
         opacity: position.interpolate({
           inputRange: [index - 1, index, index + 1],
